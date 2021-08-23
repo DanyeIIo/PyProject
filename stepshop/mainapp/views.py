@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-
 def products(request):
     title = 'продукты | каталог'
 
