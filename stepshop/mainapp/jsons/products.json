@@ -1,0 +1,38 @@
+[
+  {
+      "category": "Gachi",
+      "name": "Gachi Toy Boy",
+      "image": "product_images/billey.jpeg",
+      "short_desc": "gachi",
+      "description": "gachi",
+      "price": "228.00",
+      "quantity": 322
+  },
+  {
+      "category": "Gachi",
+      "name": "Gachi Toy Girtl",
+      "image": "product_images/niceFace.png",
+      "short_desc": "gachi",
+      "description": "gachi",
+      "price": "322.00",
+      "quantity": 228
+  },
+  {
+      "category": "Muchi",
+      "name": "Muchi Toy BOY",
+      "image": "product_images/niceFace.png",
+      "short_desc": "gachi",
+      "description": "gachi",
+      "price": "322.00",
+      "quantity": 228
+  },
+  {
+      "category": "Muchi",
+      "name": "Muchi Toy Girl",
+      "image": "product_images/niceFace.png",
+      "short_desc": "gachi",
+      "description": "gachi",
+      "price": "322.00",
+      "quantity": 228,
+  }
+]
