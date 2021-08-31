@@ -2,6 +2,10 @@ from django.shortcuts import render, get_object_or_404
 
 from mainapp.models import ProductCategory, Product
 
+from basketapp.models import Basket
+
+from stepshop.views import get_basket
+
 
 def products(request, pk=0):
     title = 'продукты | каталог'
@@ -9,10 +13,13 @@ def products(request, pk=0):
     links_menu = ProductCategory.objects.all()
     products_all = Product.objects.all().order_by('price')
 
+
     context = {
         'title': title,
         'links_menu': links_menu,
         'products_all': products_all,
+        'basket': get_basket()
+
     }
 
     # if pk is not None:
@@ -39,6 +46,7 @@ def product(request, pk):
         'title': title,
         'links_menu': links_menu,
         'current_product': current_product,
+        'basket': get_basket(request)
     }
 
     return render(request=request, template_name='mainapp/product.html', context=context)
