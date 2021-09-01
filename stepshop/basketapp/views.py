@@ -18,6 +18,7 @@ def basket(request):
 
 
 def basket_add(request, pk):
+    pk -= 1
     product = get_object_or_404(Product, pk=pk)
 
     basket = Basket.objects.filter(user=request.user, product=product).first()
@@ -32,4 +33,16 @@ def basket_add(request, pk):
 
 
 def basket_remove(request, pk):
-    return render(request, 'basketapp/basket.html')
+    pk -= 1
+
+    product = get_object_or_404(Product, pk=pk)
+
+    basket = Basket.objects.filter(user=request.user, product=product).first()
+
+    if not basket:
+        basket = Basket(user=request.user, product=product)
+
+    basket.quantity -= 1
+    basket.save()
+
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
